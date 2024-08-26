@@ -23,7 +23,7 @@ public class Main {
             "2. Circulos \n" +
             "3. Triangulos \n" + // Nueva opción para mostrar áreas
             "4. Salir \n" +
-            "Ingresa un numero entero: "));
+            "Ingresa una opción: "));
 
             switch (opc1){
             case 1:
@@ -32,9 +32,8 @@ public class Main {
                 opc = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
                         "1. Crear Cuadrado \n" +
                         "2. Mostrar Cuadrados \n" +
-                        "3. Calcular y mostrar áreas \n" + // Nueva opción para mostrar áreas
-                        "4. Regresar al menu principal \n" +
-                        "Ingresa un numero entero: "));
+                        "3. Regresar al menu principal \n" +
+                        "Ingresa una opción: "));
 
                 switch (opc) {
                     case 1:
@@ -46,10 +45,6 @@ public class Main {
                         break;
 
                     case 3:
-                        //calcularYMostrarAreas();
-                        break;
-
-                    case 4:
                         break;
 
                     default:
@@ -57,15 +52,97 @@ public class Main {
                         break;
                 }
             }
+            case 2:
+            int opc3 = 0;
+                while (opc3 != 3) { // Ajuste para incluir una opción adicional
+                opc3 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
+                        "1. Crear Circulo \n" +
+                        "2. Mostrar Circulo \n" +
+                        "3. Regresar al menu principal \n" +
+                        "Ingresa una opción: "));
+
+                switch (opc3) {
+                    case 1:
+                        crearCirculo();
+                        break;
+
+                    case 2:
+                        mostrarCirculo();
+                        break;
+
+                    case 3:
+                        break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
+                        break;
+                }
+            }
+            case 3:
+            int opc4 = 0;
+                while (opc4 != 3) { // Ajuste para incluir una opción adicional
+                opc4 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
+                        "1. Crear Triangulo \n" +
+                        "2. Mostrar Triangulo \n" +
+                        "3. Regresar al menu principal \n" +
+                        "Ingresa una opción: "));
+
+                switch (opc4) {
+                    case 1:
+                        crearTriangulo();
+                        break;
+
+                    case 2:
+                        mostrarTriangulo();
+                        break;
+
+                    case 3:
+                        break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
+                        break;
+                }
+            }
+            case 4:
+            JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
+                break;
+
         }
+            
     }
     
     }
+
+    //Metodos 
     private void crearCuadrado() {
         Cuadrado cuadrado = new Cuadrado();
         cuadrado.setLado(Float.parseFloat(JOptionPane.showInputDialog("¿Cuál es el lado del cuadrado?")));
         cuadrado.calculos(); // Realiza los cálculos necesarios
         String mensaje = AlmacenDeFiguras.insertarCuadrado(cuadrado);
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+
+    private void mostrarCirculo() {
+        StringBuilder sb = new StringBuilder();
+        for (Circulo circulo : AlmacenDeFiguras.miscirculos) {
+            if (circulo != null) {
+                sb.append(circulo.toString()).append("\n");
+            }
+        }
+        
+        if (sb.length() > 0) {
+            JOptionPane.showMessageDialog(null, sb.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay cuadrados almacenados.");
+        }
+    }
+
+    private void crearCirculo() {
+        Circulo circulo = new Circulo();
+        circulo.setDiametro(Float.parseFloat(JOptionPane.showInputDialog("¿Cuál es el diametro del circulo?")));
+        circulo.calculosC(); // Realiza los cálculos necesarios
+        String mensaje = AlmacenDeFiguras.insertarCirculo(circulo);
         JOptionPane.showMessageDialog(null, mensaje);
     }
 
@@ -80,39 +157,32 @@ public class Main {
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(null, sb.toString());
         } else {
-            JOptionPane.showMessageDialog(null, "No hay cuadrados almacenados.");
+            JOptionPane.showMessageDialog(null, "No hay circulos almacenados.");
+        }
+    }
+    private void crearTriangulo() {
+        Triangulo triangulo = new Triangulo();
+        triangulo.setAltura(Float.parseFloat(JOptionPane.showInputDialog("¿Cuál es la altura del triangulo?")));
+        triangulo.setBase(Float.parseFloat(JOptionPane.showInputDialog("¿Cuál es la base del triangulo?")));
+        triangulo.calculosT(); // Realiza los cálculos necesarios
+        String mensaje = AlmacenDeFiguras.insertarTriangulo(triangulo);
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+
+    private void mostrarTriangulo() {
+        StringBuilder sb = new StringBuilder();
+        for (Triangulo triangulo : AlmacenDeFiguras.mistriangulos) {
+            if (triangulo != null) {
+                sb.append(triangulo.toString()).append("\n");
+            }
+        }
+        
+        if (sb.length() > 0) {
+            JOptionPane.showMessageDialog(null, sb.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay triangulos almacenados.");
         }
     }
 
-    // private void calcularYMostrarAreas() {
-    //     // Crear un objeto de cada tipo y realizar cálculos
-    //     Cuadrado cuadrado = new Cuadrado();
-    //     Circulo circulo = new Circulo();
-    //     Triangulo triangulo = new Triangulo();
-
-    //     // Cuadrado
-    //     float l = Float.parseFloat(JOptionPane.showInputDialog("Ingresa el valor del lado del cuadrado"));
-    //     cuadrado.setLado(l);
-    //     cuadrado.calculos();
-
-    //     // Círculo
-    //     float diametro = Float.parseFloat(JOptionPane.showInputDialog("Ingresa el valor del diámetro del círculo"));
-    //     circulo.setDiametro(diametro);
-    //     circulo.calculosC();
-
-    //     // Triángulo
-    //     float altura = Float.parseFloat(JOptionPane.showInputDialog("Ingresa el valor de la altura del triángulo"));
-    //     float base = Float.parseFloat(JOptionPane.showInputDialog("Ingresa el valor de la base del triángulo"));
-    //     float ladoT = Float.parseFloat(JOptionPane.showInputDialog("Ingresa el valor del lado del triángulo"));
-
-    //     triangulo.setAltura(altura);
-    //     triangulo.setBase(base);
-    //     triangulo.setLado(ladoT);
-    //     triangulo.calculosT();
-
-    //     // Mostrar resultados
-    //     JOptionPane.showMessageDialog(null, "El valor del área del cuadrado con lado de " + cuadrado.getLado() + " es " + cuadrado.getArea() + 
-    //         "\nEl valor del área del círculo con diámetro de " + circulo.getDiametro() + " es " + circulo.getArea() + 
-    //         "\nEl valor del área del triángulo con lado de " + triangulo.getLado() + " es " + triangulo.getArea());
-    // }
+    
 }

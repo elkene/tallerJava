@@ -47,7 +47,7 @@ public class Triangulo {
         
     }
     public String toString(){
-        return     "\nEl valor del area del triangulo con lado de "+getLado()+" es "+getArea();
+        return     "\nEl valor del area del triangulo con base de "+getBase()+ " y con altura de "+getAltura() + " es "+getArea();
 
     }
 }

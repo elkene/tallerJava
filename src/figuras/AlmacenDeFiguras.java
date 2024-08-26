@@ -46,7 +46,7 @@ public class AlmacenDeFiguras {
         if (indiceTriangulo < mistriangulos.length) {
             mistriangulos[indiceTriangulo] = triangulo;
             indiceTriangulo++;
-            return "Circulo insertado correctamente";
+            return "Triangulo insertado correctamente";
         } else {
             return "Almacen lleno";
         }

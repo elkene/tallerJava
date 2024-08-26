@@ -36,4 +36,5 @@ public class Cuadrado {
     public String toString(){
         return "El valor del area del cuadrado con lado de "+getLado()+" es "+getArea();
     }
+    
 }
