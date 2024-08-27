@@ -16,102 +16,109 @@ public class Main {
     }
 
     private void menu() {
-        int opc1=0;
-        while (opc1!=4){
+        int opc1 = 0;
+        while (opc1 != 4) {
             opc1 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
-            "1. Cuadrados \n" +
-            "2. Circulos \n" +
-            "3. Triangulos \n" + // Nueva opción para mostrar áreas
-            "4. Salir \n" +
-            "Ingresa una opción: "));
-
-            switch (opc1){
-            case 1:
-                int opc = 0;
-                while (opc != 4) { // Ajuste para incluir una opción adicional
-                opc = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
-                        "1. Crear Cuadrado \n" +
-                        "2. Mostrar Cuadrados \n" +
-                        "3. Regresar al menu principal \n" +
-                        "Ingresa una opción: "));
-
-                switch (opc) {
-                    case 1:
-                        crearCuadrado();
-                        break;
-
-                    case 2:
-                        mostrarCuadrados();
-                        break;
-
-                    case 3:
-                        break;
-
-                    default:
-                        JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
-                        break;
-                }
-            }
-            case 2:
-            int opc3 = 0;
-                while (opc3 != 3) { // Ajuste para incluir una opción adicional
-                opc3 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
-                        "1. Crear Circulo \n" +
-                        "2. Mostrar Circulo \n" +
-                        "3. Regresar al menu principal \n" +
-                        "Ingresa una opción: "));
-
-                switch (opc3) {
-                    case 1:
-                        crearCirculo();
-                        break;
-
-                    case 2:
-                        mostrarCirculo();
-                        break;
-
-                    case 3:
-                        break;
-
-                    default:
-                        JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
-                        break;
-                }
-            }
-            case 3:
-            int opc4 = 0;
-                while (opc4 != 3) { // Ajuste para incluir una opción adicional
-                opc4 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
-                        "1. Crear Triangulo \n" +
-                        "2. Mostrar Triangulo \n" +
-                        "3. Regresar al menu principal \n" +
-                        "Ingresa una opción: "));
-
-                switch (opc4) {
-                    case 1:
-                        crearTriangulo();
-                        break;
-
-                    case 2:
-                        mostrarTriangulo();
-                        break;
-
-                    case 3:
-                        break;
-
-                    default:
-                        JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
-                        break;
-                }
-            }
-            case 4:
-            JOptionPane.showMessageDialog(null, "Ingresa un numero valido...");
-                break;
-
-        }
-            
-    }
+                "1. Cuadrados \n" +
+                "2. Círculos \n" +
+                "3. Triángulos \n" +
+                "4. Salir \n" +
+                "Ingresa una opción: "));
     
+            switch (opc1) {
+                case 1:
+                    int opc = 0;
+                    while (opc != 3) {
+                        opc = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
+                            "1. Crear Cuadrado \n" +
+                            "2. Mostrar Cuadrados \n" +
+                            "3. Regresar al menú principal \n" +
+                            "Ingresa una opción: "));
+    
+                        switch (opc) {
+                            case 1:
+                                crearCuadrado();
+                                break;
+    
+                            case 2:
+                                mostrarCuadrados();
+                                break;
+    
+                            case 3:
+                                break;
+    
+                            default:
+                                JOptionPane.showMessageDialog(null, "Ingresa un número válido...");
+                                break;
+                        }
+                    }
+                    break;
+    
+                case 2:
+                    int opc3 = 0;
+                    while (opc3 != 3) {
+                        opc3 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
+                            "1. Crear Círculo \n" +
+                            "2. Mostrar Círculos \n" +
+                            "3. Regresar al menú principal \n" +
+                            "Ingresa una opción: "));
+    
+                        switch (opc3) {
+                            case 1:
+                                crearCirculo();
+                                break;
+    
+                            case 2:
+                                mostrarCirculo();
+                                break;
+    
+                            case 3:
+                                break;
+    
+                            default:
+                                JOptionPane.showMessageDialog(null, "Ingresa un número válido...");
+                                break;
+                        }
+                    }
+                    break;
+    
+                case 3:
+                    int opc4 = 0;
+                    while (opc4 != 3) {
+                        opc4 = Integer.parseInt(JOptionPane.showInputDialog(" MENU \n" +
+                            "1. Crear Triángulo \n" +
+                            "2. Mostrar Triángulos \n" +
+                            "3. Regresar al menú principal \n" +
+                            "Ingresa una opción: "));
+    
+                        switch (opc4) {
+                            case 1:
+                                crearTriangulo();
+                                break;
+    
+                            case 2:
+                                mostrarTriangulo();
+                                break;
+    
+                            case 3:
+                                break;
+    
+                            default:
+                                JOptionPane.showMessageDialog(null, "Ingresa un número válido...");
+                                break;
+                        }
+                    }
+                    break;
+    
+                case 4:
+                    JOptionPane.showMessageDialog(null, "Saliendo del programa...");
+                    break;
+    
+                default:
+                    JOptionPane.showMessageDialog(null, "Ingresa un número válido...");
+                    break;
+            }
+        }
     }
 
     //Metodos 

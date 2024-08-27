@@ -5,7 +5,7 @@ public class AlmacenDeFiguras {
     static Cuadrado[] miscuadrados;
     static int indiceCuadrado;
 
-    //Circulo
+    //Circulos
     static Circulo[] miscirculos;
     static int indiceCirculo;
 
