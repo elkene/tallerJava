@@ -1,13 +1,9 @@
 package figuras;
 
-public class Triangulo {
-
-
-    private float area;
-    private float perimetro;
+public class Triangulo extends Figura {
+        
     private float base;
     private float altura;
-    private float lado;
 
     public void setBase(float base){
         this.base=base;
@@ -25,22 +21,8 @@ public class Triangulo {
         return altura;
     }
 
-    public void setLado(float lado){
-        this.lado=lado;
+   
 
-    } 
-    public float getLado(){
-        return lado;
-    }
-
-    public float getArea(){
-        return area;
-    }
-
-    public float getPerimetro(){
-        return perimetro;
-    }
-    
     public void calculosT(){
         area=(base*altura)/2;
         perimetro=lado*3;

@@ -129,22 +129,22 @@ public class Main {
         String mensaje = AlmacenDeFiguras.insertarCuadrado(cuadrado);
         JOptionPane.showMessageDialog(null, mensaje);
     }
-
-    private void mostrarCirculo() {
+    
+    private void mostrarCuadrados() {
         StringBuilder sb = new StringBuilder();
-        for (Circulo circulo : AlmacenDeFiguras.miscirculos) {
-            if (circulo != null) {
-                sb.append(circulo.toString()).append("\n");
+        for (int i = 0; i < AlmacenDeFiguras.getIndiceCuadrado(); i++) {
+            Cuadrado cuadrado = AlmacenDeFiguras.getMisCuadrados()[i];
+            if (cuadrado != null) {
+                sb.append(cuadrado.toString()).append("\n");
             }
         }
-        
+    
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(null, sb.toString());
         } else {
             JOptionPane.showMessageDialog(null, "No hay cuadrados almacenados.");
         }
     }
-
     private void crearCirculo() {
         Circulo circulo = new Circulo();
         circulo.setDiametro(Float.parseFloat(JOptionPane.showInputDialog("¿Cuál es el diametro del circulo?")));
@@ -153,20 +153,25 @@ public class Main {
         JOptionPane.showMessageDialog(null, mensaje);
     }
 
-    private void mostrarCuadrados() {
+    private void mostrarCirculo() {
         StringBuilder sb = new StringBuilder();
-        for (Cuadrado cuadrado : AlmacenDeFiguras.miscuadrados) {
-            if (cuadrado != null) {
-                sb.append(cuadrado.toString()).append("\n");
+        for (int i = 0; i < AlmacenDeFiguras.getIndiceCirculo(); i++) {
+            Circulo circulo = AlmacenDeFiguras.getMisCirculos()[i];
+            if (circulo != null) {
+                sb.append(circulo.toString()).append("\n");
             }
         }
-        
+    
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(null, sb.toString());
         } else {
-            JOptionPane.showMessageDialog(null, "No hay circulos almacenados.");
+            JOptionPane.showMessageDialog(null, "No hay cuadrados almacenados.");
         }
     }
+
+
+
+    
     private void crearTriangulo() {
         Triangulo triangulo = new Triangulo();
         triangulo.setAltura(Float.parseFloat(JOptionPane.showInputDialog("¿Cuál es la altura del triangulo?")));
@@ -178,18 +183,19 @@ public class Main {
 
     private void mostrarTriangulo() {
         StringBuilder sb = new StringBuilder();
-        for (Triangulo triangulo : AlmacenDeFiguras.mistriangulos) {
+        for (int i = 0; i < AlmacenDeFiguras.getIndiceTriangulo(); i++) {
+            Triangulo triangulo = AlmacenDeFiguras.getMisTriangulos()[i];
             if (triangulo != null) {
                 sb.append(triangulo.toString()).append("\n");
             }
         }
-        
+    
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(null, sb.toString());
         } else {
             JOptionPane.showMessageDialog(null, "No hay triangulos almacenados.");
         }
     }
-
+    
     
 }
